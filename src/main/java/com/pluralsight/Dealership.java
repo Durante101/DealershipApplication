@@ -49,7 +49,7 @@ public class Dealership {
         return inventory;
     }
 
-    public ArrayList<Vehicle> findVehiclesByMileageRange(int minMileage, int maxMileage) {
+    public ArrayList<Vehicle> findVehiclesByPriceRange(double minPrice, double maxPrice) {
         return inventory;
     }
     public ArrayList<Vehicle> findVehiclesByMakeModel(String make, String model) {
@@ -61,8 +61,14 @@ public class Dealership {
     public ArrayList<Vehicle> findVehiclesByColor(String color) {
         return inventory;
     }
-    public ArrayList<Vehicle> findVehiclesByColor(String color) {
+    public ArrayList<Vehicle> findVehiclesByMileageRange(int minMileage, int maxMileage) {
         return inventory;
+    }
+    public ArrayList<Vehicle>  findVehiclesByType(String type) {
+        return inventory;
+    }
+    public boolean removeVehicle(int vin) {
+        return true;
     }
 
 }
