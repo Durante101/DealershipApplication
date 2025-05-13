@@ -21,6 +21,7 @@ public class DealershipFileManager {
                 String phone = dealershipInfo[2];
 
                 dealership = new Dealership(address, phone, name);
+                f
             }
 
 
