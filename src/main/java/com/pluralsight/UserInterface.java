@@ -52,5 +52,25 @@ public class UserInterface {
             dealership = fileManager.getDealership();
     }
 
+    private void displayVehicles(java.util.List<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+        } else {
+            for (Vehicle vehicle : vehicles) {
+                System.out.println(
+                        "VIN: " + vehicle.getVin() +
+                                " | Year: " + vehicle.getYear() +
+                                " | Make: " + vehicle.getMake() +
+                                " | Model: " + vehicle.getModel() +
+                                " | Type: " + vehicle.getType() +
+                                " | Color: " + vehicle.getColor() +
+                                " | Odometer: " + vehicle.getOdometer() +
+                                " | Price: $" + vehicle.getPrice()
+                );
+            }
+        }
+
+    }
+
     
 }
