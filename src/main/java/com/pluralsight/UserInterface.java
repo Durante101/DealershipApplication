@@ -72,5 +72,39 @@ public class UserInterface {
 
     }
 
-    
+    private void processGetByPriceRequest() {
+
+    }
+
+    private void processGetByMakeModelRequest() {
+
+    }
+
+    private void processGetByYearRequest() {
+
+    }
+
+    private void processGetByColorRequest() {
+
+    }
+
+    private void processGetByMileageRequest() {
+
+    }
+
+    private void processGetByTypeRequest() {
+
+    }
+
+    private void processAddVehicleRequest() {
+
+    }
+
+    private void processRemoveVehicleRequest() {
+
+    }
+
+    private void processAllVehiclesRequest() {
+        displayVehicles(dealership.getAllVehicles());
+    }
 }
