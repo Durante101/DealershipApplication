@@ -31,5 +31,26 @@ public class UserInterface {
 
             String choice = scanner.nextLine();
 
-            
+            switch (choice) {
+                case "1" -> processGetByPriceRequest();
+                case "2" -> processGetByMakeModelRequest();
+                case "3" -> processGetByYearRequest();
+                case "4" -> processGetByColorRequest();
+                case "5" -> processGetByMileageRequest();
+                case "6" -> processGetByTypeRequest();
+                case "7" -> processAllVehiclesRequest();
+                case "8" -> processAddVehicleRequest();
+                case "9" -> processRemoveVehicleRequest();
+                case "10" -> check = false;
+                default -> System.out.println("Invalid option. Please try again.");
+            }
+        }
+    }
+
+    private void init() {
+        DealershipFileManager fileManager = new DealershipFileManager();
+            dealership = fileManager.getDealership();
+    }
+
+    
 }
