@@ -91,11 +91,22 @@ public class UserInterface {
     }
 
     private void processGetByMileageRequest() {
+        System.out.print("Enter minimum mileage: ");
+        int minMileage = Integer.parseInt(scanner.nextLine());
 
+        System.out.print("Enter maximum mileage: ");
+        int maxMileage = Integer.parseInt(scanner.nextLine());
+
+        ArrayList<Vehicle> results = dealership.findVehiclesByMileageRange(minMileage, maxMileage);
+        displayVehicles(results);
     }
 
     private void processGetByTypeRequest() {
+        System.out.print("Enter vehicle type (car, truck, SUV, van): ");
+        String type = scanner.nextLine();
 
+        ArrayList<Vehicle> results = dealership.findVehiclesByType(type);
+        displayVehicles(results);
     }
 
     private void processAddVehicleRequest() {
@@ -142,9 +153,9 @@ public class UserInterface {
         if (removed) {
             DealershipFileManager fileManager = new DealershipFileManager();
             fileManager.saveDealership(dealership);
-            System.out.println("Vehicle removed");
+            System.out.println("Vehicle removed successfully.");
         } else {
-            System.out.println("No vehicle found.");
+            System.out.println("No vehicle found with that VIN.");
         }
     }
 
