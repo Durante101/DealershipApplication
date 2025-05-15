@@ -74,12 +74,26 @@ public class UserInterface {
     }
 
     private void processGetByPriceRequest() {
+        System.out.print("Enter minimum price: ");
+        double min = Double.parseDouble(scanner.nextLine());
 
+        System.out.print("Enter maximum price: ");
+        double max = Double.parseDouble(scanner.nextLine());
+
+        ArrayList<Vehicle> prices = dealership.findVehiclesByPriceRange(min, max);
+        displayVehicles(prices);
 
     }
 
     private void processGetByMakeModelRequest() {
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();
 
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine();
+
+        ArrayList<Vehicle> results = dealership.findVehiclesByMakeModel(make, model);
+        displayVehicles(results);
     }
 
     private void processGetByYearRequest() {
