@@ -116,7 +116,13 @@ public class Dealership {
         return matches;
     }
     public boolean removeVehicle(int vin) {
-        return true;
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVin() == vin) {
+                inventory.remove(vehicle);
+                return true;
+            }
+        }
+        return false;;
     }
 
 }
