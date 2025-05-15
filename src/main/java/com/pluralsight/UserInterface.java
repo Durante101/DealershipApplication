@@ -83,11 +83,22 @@ public class UserInterface {
     }
 
     private void processGetByYearRequest() {
+        System.out.print("Enter minimum year: ");
+        int minYear = Integer.parseInt(scanner.nextLine());
 
+        System.out.print("Enter maximum year: ");
+        int maxYear = Integer.parseInt(scanner.nextLine());
+
+        ArrayList<Vehicle> results = dealership.findVehiclesByYearRange(minYear, maxYear);
+        displayVehicles(results);
     }
 
     private void processGetByColorRequest() {
+        System.out.print("Enter color: ");
+        String color = scanner.nextLine();
 
+        ArrayList<Vehicle> results = dealership.findVehiclesByColor(color);
+        displayVehicles(results);
     }
 
     private void processGetByMileageRequest() {
