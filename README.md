@@ -46,7 +46,7 @@ Follow these steps to get your application running within IntelliJ IDEA:
 - Java 17 Maven
 
 ## Demo
-
+![ezgif-85daeebcd21394.gif](ezgif-85daeebcd21394.gif)
 
 ![ezgif-85daeebcd21394.gif](../../../../../../AppData/Local/Temp/ezgif-85daeebcd21394.gif)
 ## Future Work
