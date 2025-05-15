@@ -65,7 +65,7 @@ public class DealershipFileManager {
 
     public Dealership saveDealership(Dealership dealership) {
         try (PrintWriter writer = new PrintWriter(FILE_NAME)) {
-            // Save dealership info (first line)
+            // Save dealership info
             writer.println(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
 
             // Save each vehicle
