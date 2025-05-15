@@ -64,7 +64,27 @@ public class DealershipFileManager {
 
 
     public Dealership saveDealership(Dealership dealership) {
+        try (PrintWriter writer = new PrintWriter(FILE_NAME)) {
+            // Save dealership info (first line)
+            writer.println(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
 
+            // Save each vehicle
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                writer.println(
+                        vehicle.getVin() + "|" +
+                                vehicle.getYear() + "|" +
+                                vehicle.getMake() + "|" +
+                                vehicle.getModel() + "|" +
+                                vehicle.getType() + "|" +
+                                vehicle.getColor() + "|" +
+                                vehicle.getOdometer() + "|" +
+                                vehicle.getPrice()
+                );
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error saving inventory file: " + e.getMessage());
+        }
         return dealership;
     }
 }
