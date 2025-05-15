@@ -102,7 +102,6 @@ public class Dealership {
         }
 
         return matches;
-        return inventory;
     }
     public ArrayList<Vehicle>  findVehiclesByType(String type) {
         ArrayList<Vehicle> matches = new ArrayList<>();
@@ -122,7 +121,7 @@ public class Dealership {
                 return true;
             }
         }
-        return false;;
+        return false;
     }
 
 }

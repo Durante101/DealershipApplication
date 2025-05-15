@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -74,6 +75,7 @@ public class UserInterface {
 
     private void processGetByPriceRequest() {
 
+
     }
 
     private void processGetByMakeModelRequest() {
@@ -97,11 +99,53 @@ public class UserInterface {
     }
 
     private void processAddVehicleRequest() {
+        System.out.print("Enter VIN: ");
+        int vin = Integer.parseInt(scanner.nextLine());
 
+        System.out.print("Enter year: ");
+        int year = Integer.parseInt(scanner.nextLine());
+
+        System.out.print("Enter make: ");
+        String make = scanner.nextLine();
+
+        System.out.print("Enter model: ");
+        String model = scanner.nextLine();
+
+        System.out.print("Enter type: ");
+        String type = scanner.nextLine();
+
+        System.out.print("Enter color: ");
+        String color = scanner.nextLine();
+
+        System.out.print("Enter odometer reading: ");
+        int odometer = Integer.parseInt(scanner.nextLine());
+
+        System.out.print("Enter price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+
+        Vehicle newVehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
+        dealership.addVehicle(newVehicle);
+
+        // SAVE!
+        DealershipFileManager fileManager = new DealershipFileManager();
+        fileManager.saveDealership(dealership);
+
+        System.out.println("Vehicle Added!");
     }
 
     private void processRemoveVehicleRequest() {
+        System.out.print("Enter VIN of vehicle to remove: ");
+        int vin = Integer.parseInt(scanner.nextLine());
 
+        boolean removed = dealership.removeVehicle(vin);
+
+        if (removed) {
+            DealershipFileManager fileManager = new DealershipFileManager();
+            fileManager.saveDealership(dealership);
+            System.out.println("Vehicle removed");
+        } else {
+            System.out.println("No vehicle found.");
+        }
     }
 
     private void processAllVehiclesRequest() {

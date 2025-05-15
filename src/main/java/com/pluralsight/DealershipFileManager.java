@@ -1,7 +1,7 @@
 package com.pluralsight;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 
 public class DealershipFileManager {
     private static final String FILE_NAME = "inventory.csv";
@@ -63,7 +63,8 @@ public class DealershipFileManager {
     }
 
 
-//    public Dealership saveDealership(Dealership dealership) {
-//
-//    }
+    public Dealership saveDealership(Dealership dealership) {
+
+        return dealership;
+    }
 }
